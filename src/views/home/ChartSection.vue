@@ -4,7 +4,34 @@
 
     <!-- card body -->
     <div class="px-5 pb-3">
-      <BarChart :chartdata="chartdata" />
+      <div class="flex justify-between px-5 mb-10">
+        <span class="pb-2 font-bold border-b-4 border-blue-600 text-blue-spark">
+          Automated Outreaches
+        </span>
+
+        <div>
+          <button
+            @click="chartType = 'bar'"
+            class="w-20 px-4 py-1 transition bg-gray-200 hover:bg-gray-300"
+            :class="{ 'bg-blue-spark text-white': chartType === 'bar' }"
+          >
+            BAR
+          </button>
+          <button
+            @click="chartType = 'line'"
+            class="w-20 px-4 py-1 transition bg-gray-200 hover:bg-gray-300"
+            :class="{
+              'bg-blue-spark hover:bg-blue-700 text-white':
+                chartType === 'line',
+            }"
+          >
+            LINE
+          </button>
+        </div>
+      </div>
+
+      <BarChart v-if="chartType === 'bar'" :chartdata="computedChartData" />
+      <LineChart v-if="chartType === 'line'" :chartdata="computedChartData" />
     </div>
 
     <!-- card footer -->
@@ -22,13 +49,50 @@
 
 <script>
 import BarChart from "@/components/charts/BarChart";
+import LineChart from "@/components/charts/LineChart";
 
 export default {
   components: {
     BarChart,
+    LineChart,
   },
   props: {
-    chartdata: Object,
+    datasets: Object,
+  },
+
+  data() {
+    return {
+      chartType: "line",
+    };
+  },
+
+  computed: {
+    computedChartData() {
+      if (this.chartType === "bar") {
+        return {
+          labels: this.datasets.labels,
+          datasets: [
+            {
+              data: this.datasets.data,
+              backgroundColor: "#f87979",
+            },
+          ],
+        };
+      } else if (this.chartType === "line") {
+        return {
+          labels: this.datasets.labels,
+          datasets: [
+            {
+              data: this.datasets.data,
+              backgroundColor: "#f87979",
+              borderColor: "#f87979",
+              fill: false,
+            },
+          ],
+        };
+      }
+      return {};
+    },
   },
 };
 </script>

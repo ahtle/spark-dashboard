@@ -8,14 +8,18 @@
 
     <div class="grid grid-cols-5 gap-4">
       <div class="col-span-2">
-        <RecentClientsSection :clients="clients" />
+        <div class="mb-5">
+          <RecentClientsSection :clients="clients" />
+        </div>
+
+        <div>
+          <RecentProspectsSection :prospects="prospects" />
+        </div>
       </div>
 
       <div class="col-span-3">
-        <ChartSection :chartdata="chartdata" />
+        <ChartSection :datasets="datasets" />
       </div>
-
-      <div>3</div>
     </div>
   </div>
 </template>
@@ -24,12 +28,14 @@
 import ChartSection from "./ChartSection";
 import OverviewSection from "./OverviewSection";
 import RecentClientsSection from "./RecentClientsSection";
+import RecentProspectsSection from "./RecentProspectsSection";
 
 export default {
   components: {
     ChartSection,
     OverviewSection,
     RecentClientsSection,
+    RecentProspectsSection,
   },
 
   data() {
@@ -37,44 +43,71 @@ export default {
       clients: [
         {
           id: 1,
-          first_name: "John",
-          last_name: "Doe",
+          first_name: "George",
+          last_name: "Washington",
           action: "call",
         },
         {
           id: 2,
-          first_name: "Jane",
-          last_name: "Doe",
+          first_name: "John",
+          last_name: "Adams",
           action: "email",
         },
         {
           id: 3,
-          first_name: "John",
-          last_name: "Doe",
+          first_name: "Thomas",
+          last_name: "Jefferson",
           action: "email",
         },
         {
           id: 4,
-          first_name: "Jane",
-          last_name: "Doe",
+          first_name: "James",
+          last_name: "Madison",
           action: "call",
         },
         {
           id: 5,
-          first_name: "Jane",
-          last_name: "Doe",
+          first_name: "James",
+          last_name: "Monroe",
           action: "call",
         },
       ],
-      chartdata: {
+      datasets: {
         labels: ["Mon", "Tues", "Weds", "Thurs", "Fri", "Sat", "Sun"],
-        datasets: [
-          {
-            backgroundColor: "#f87979",
-            data: [10, 7, 15, 7, 12, 8, 14],
-          },
-        ],
+        data: [10, 7, 15, 7, 12, 8, 14],
       },
+      prospects: [
+        {
+          id: 1,
+          first_name: "Red",
+          last_name: "Ranger",
+          phone_number: "123-456-7890",
+        },
+        {
+          id: 2,
+          first_name: "Blue",
+          last_name: "Ranger",
+          phone_number: "123-456-7890",
+        },
+        {
+          id: 3,
+          first_name: "Black",
+          last_name: "Ranger",
+          phone_number: "123-456-7890",
+        },
+        {
+          id: 4,
+          first_name: "Yellow",
+          last_name: "Ranger",
+          phone_number: "123-456-7890",
+        },
+        {
+          id: 5,
+          first_name: "Pink",
+          last_name: "Ranger",
+          phone_number: "123-456-7890",
+        },
+      ],
     };
   },
 };

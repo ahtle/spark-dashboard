@@ -1,25 +1,18 @@
 <template>
   <div class="overflow-hidden border rounded shadow">
-    <h3 class="p-5 text-xl font-bold">Recent Clients</h3>
+    <h3 class="p-5 text-xl font-bold">Recent Prospects</h3>
 
     <!-- card body -->
     <div class="px-8 pb-3">
       <div
-        v-for="(c, i) in clients"
-        :key="c.id"
+        v-for="(p, i) in prospects"
+        :key="p.id"
         class="grid grid-cols-2 gap-2 py-2 mb-1 text-lg"
-        :class="i < clients.length - 1 ? 'border-b border-gray-100' : ''"
+        :class="i < prospects.length - 1 ? 'border-b border-gray-100' : ''"
       >
-        <span>{{ c.first_name }} {{ c.last_name }}</span>
+        <span>{{ p.first_name }} {{ p.last_name }}</span>
 
-        <span v-if="c.action === 'call'">
-          <font-awesome-icon :icon="['fa', 'phone-alt']" class="mr-2" />
-          Follow up call
-        </span>
-        <span v-if="c.action === 'email'">
-          <font-awesome-icon :icon="['fa', 'envelope']" class="mr-2" />
-          Email to get medical info
-        </span>
+        <span class="text-right">{{ p.phone_number }} </span>
       </div>
     </div>
 
@@ -39,7 +32,7 @@
 <script>
 export default {
   props: {
-    clients: Array,
+    prospects: Array,
   },
 };
 </script>
