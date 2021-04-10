@@ -1,9 +1,9 @@
 <template>
-  <div class="overflow-hidden border rounded shadow">
-    <h3 class="p-5 text-xl font-bold">Per Business Rules</h3>
+  <div class="w-full overflow-hidden border rounded shadow">
+    <h3 class="p-2 text-xl font-bold p2 md:p-5">Per Business Rules</h3>
 
     <!-- card body -->
-    <div class="px-5 pb-3">
+    <div class="px-2 pb-3 md:px-5">
       <div class="flex justify-between px-5 mb-10">
         <span class="pb-2 font-bold border-b-4 border-blue-600 text-blue-spark">
           Automated Outreaches

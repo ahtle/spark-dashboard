@@ -1,13 +1,13 @@
 <template>
   <div class="overflow-hidden border rounded shadow">
-    <h3 class="p-5 text-xl font-bold">Recent Prospects</h3>
+    <h3 class="p-3 text-lg font-bold md:p-5 md:text-xl">Recent Prospects</h3>
 
     <!-- card body -->
     <div class="px-8 pb-3">
       <div
         v-for="(p, i) in prospects"
         :key="p.id"
-        class="grid grid-cols-2 gap-2 py-2 mb-1 text-lg"
+        class="grid grid-cols-2 gap-2 py-2 mb-1 text-md md:text-lg"
         :class="i < prospects.length - 1 ? 'border-b border-gray-100' : ''"
       >
         <span>{{ p.first_name }} {{ p.last_name }}</span>

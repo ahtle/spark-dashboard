@@ -1,13 +1,15 @@
 <template>
   <div id="Home">
-    <h1 class="mb-10 text-4xl color-blue-spark">Good morning, Batman!</h1>
+    <h1 class="mb-5 text-xl md:mb-10 md:text-4xl color-blue-spark">
+      Good morning, Batman!
+    </h1>
 
-    <div class="mb-16">
+    <div class="mb-8 md:mb-16">
       <OverviewSection />
     </div>
 
-    <div class="grid grid-cols-5 gap-4">
-      <div class="col-span-2">
+    <div class="grid md:grid-cols-5 md:gap-4">
+      <div class="mb-5 md:col-span-2">
         <div class="mb-5">
           <RecentClientsSection :clients="clients" />
         </div>
@@ -17,7 +19,7 @@
         </div>
       </div>
 
-      <div class="col-span-3">
+      <div class="md:col-span-3">
         <ChartSection :datasets="datasets" />
       </div>
     </div>
@@ -32,8 +34,8 @@ import RecentProspectsSection from "./RecentProspectsSection";
 
 export default {
   components: {
-    ChartSection,
     OverviewSection,
+    ChartSection,
     RecentClientsSection,
     RecentProspectsSection,
   },

@@ -2,7 +2,7 @@
   <div id="AgentDashboardLayout" class="layout">
     <Navbar />
 
-    <main class="container py-10 mx-auto">
+    <main class="container px-2 py-5 mx-auto md:py-10 md:px-0">
       <slot />
     </main>
 
@@ -21,7 +21,4 @@ export default {
 </script>
 
 <style scoped>
-main {
-  min-height: 89vh;
-}
 </style>
