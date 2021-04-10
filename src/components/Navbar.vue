@@ -20,7 +20,7 @@
 
       <router-link to="/" class="ml-8">
         <img
-          src="/images/spark-logo-white.svg"
+          src="../assets/images/spark-logo-white.svg"
           href="Spark logo"
           class="h-10"
         />
@@ -28,7 +28,11 @@
     </div>
 
     <div class="overflow-hidden rounded-full">
-      <img src="/images/batman.png" href="Profile pic" class="w-12 h-12" />
+      <img
+        src="../assets/images/batman.png"
+        href="Profile pic"
+        class="w-12 h-12"
+      />
     </div>
 
     <!-- side nav -->
@@ -41,7 +45,7 @@
         @click="isOpen = false"
         class="flex items-center justify-center w-full p-4 mb-10 cursor-pointer"
       >
-        <img src="/images/spark-logo.svg" alt="Spark logo" />
+        <img src="../assets/images/spark-logo.svg" alt="Spark logo" />
       </div>
 
       <!-- navs -->
