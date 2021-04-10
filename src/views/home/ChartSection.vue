@@ -4,7 +4,7 @@
 
     <!-- card body -->
     <div class="px-2 pb-3 md:px-5">
-      <div class="flex justify-between px-5 mb-10">
+      <div class="flex justify-between px-2 mb-10 md:px-5">
         <span class="pb-2 font-bold border-b-4 border-blue-600 text-blue-spark">
           Automated Outreaches
         </span>
@@ -12,14 +12,14 @@
         <div>
           <button
             @click="chartType = 'bar'"
-            class="w-20 px-4 py-1 transition bg-gray-200 hover:bg-gray-300"
+            class="w-16 px-4 py-1 transition bg-gray-200 md:w-20 hover:bg-gray-300"
             :class="{ 'bg-blue-spark text-white': chartType === 'bar' }"
           >
             BAR
           </button>
           <button
             @click="chartType = 'line'"
-            class="w-20 px-4 py-1 transition bg-gray-200 hover:bg-gray-300"
+            class="w-16 px-4 py-1 transition bg-gray-200 md:w-20 hover:bg-gray-300"
             :class="{
               'bg-blue-spark hover:bg-blue-700 text-white':
                 chartType === 'line',
@@ -30,8 +30,16 @@
         </div>
       </div>
 
-      <BarChart v-if="chartType === 'bar'" :chartdata="computedChartData" />
-      <LineChart v-if="chartType === 'line'" :chartdata="computedChartData" />
+      <BarChart
+        v-if="chartType === 'bar'"
+        :chartdata="computedChartData"
+        :width="`100%`"
+      />
+      <LineChart
+        v-if="chartType === 'line'"
+        :chartdata="computedChartData"
+        :width="`100%`"
+      />
     </div>
 
     <!-- card footer -->
